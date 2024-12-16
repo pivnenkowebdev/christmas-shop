@@ -1,0 +1,24 @@
+@use '../common-style/variables.scss';
+@use '../common-style/mixins.scss';
+
+.gifts {
+    &__content {
+        @include mixins.background();
+
+        @media (max-width: 1024px) {
+            padding: 60px 0px;
+        }
+    }
+
+    &__title {
+        margin-bottom: 9px;
+        text-align: center;
+        @include mixins.caption(variables.$staticWhite);
+    }
+
+    &__subtitle {
+        margin-bottom: 20px;
+        text-align: center;
+        @include mixins.header2(variables.$staticWhite);
+    }
+}

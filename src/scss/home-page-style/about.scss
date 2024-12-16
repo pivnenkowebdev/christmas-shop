@@ -1,0 +1,64 @@
+@use '../common-style/variables.scss';
+@use '../common-style/mixins.scss';
+
+.about {
+    &__content {
+        @include mixins.background();
+
+        @media (max-width: 1024px) {
+            padding: 60px 8px;
+        }
+    }
+}
+
+.banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+    background-color: variables.$staticWhite;
+
+    @media (max-width: 760px) {
+        flex-direction: column;
+    }
+
+    &__description {
+        padding: 0 60px;
+        max-width: 530px;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+
+        @media (max-width: 760px) {
+            padding: 60px 20px;
+            width: 100%;
+        }
+    }
+
+    &__title {
+        @include mixins.caption(variables.$primary);
+    }
+
+    &__subtitle {
+        @include mixins.header2(variables.$dark);
+    }
+
+    &__text {
+        @include mixins.paragraph(variables.$dark);
+    }
+
+    &__preview {
+        background-image: url(/img/santa.png);
+        background-size: cover;
+        background-position: center;
+        height: 528px;
+        width: 50%;
+        border-radius: 20px;
+
+        @media (max-width: 760px) {
+            width: 100%;
+        }
+    }
+}

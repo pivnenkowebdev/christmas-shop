@@ -1,0 +1,134 @@
+@use './variables.scss';
+@use './mixins.scss';
+
+.footer {
+    &__content {
+        padding: 60px 82px;
+
+        @media (max-width: 768px) {
+            padding: 60px 8px;
+        }
+    }
+
+    &__connect {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+.list-contacts {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 60px;
+
+    @media (max-width: 1024px) {
+        flex-direction: column;
+    }
+
+    &__item {
+        flex-grow: 1;
+        max-width: 417px;
+
+        @media (max-width: 1024px) {
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+}
+
+.contact-link {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    border-radius: 20px;
+    background-color: variables.$contentBackground;
+
+    &__wrapper-img {
+        width: 80px;
+        height: 80px;
+    }
+
+    &__icon {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__title {
+        transition: 0.3s;
+        @include mixins.actionLarge(variables.$dark);
+    }
+
+    &__description {
+        transition: 0.3s;
+        @include mixins.header3(variables.$dark);
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            .contact-link__title {
+                color: variables.$primary;
+            }
+
+            .contact-link__description {
+                color: variables.$primary;
+            }
+        }
+    }
+}
+
+.list-social {
+    display: flex;
+    gap: 12px;
+}
+
+.copyright {
+    @include mixins.paragraph(variables.$dark);
+}
+
+.school-link {
+    transition: 0.3s;
+    @include mixins.caption(variables.$dark);
+
+    @media (hover: hover) {
+        &:hover {
+            color: variables.$primary;
+        }
+    }
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+
+    &__icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 24px;
+        height: 24px;
+        transform: translate(-50%, -50%);
+        object-fit: contain;
+        stroke: variables.$dark;
+        transition: 0.3s;
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            .social-link__icon {
+                stroke: variables.$primary;
+            }
+        }
+    }
+}

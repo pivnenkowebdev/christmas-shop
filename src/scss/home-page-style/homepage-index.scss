@@ -1,0 +1,11 @@
+@use '../common-style/base.scss';
+@use '../common-style/mixins.scss';
+@use './hero.scss';
+@use './about.scss';
+@use './slider.scss';
+@use './gifts.scss';
+@use './cta-section.scss';
+
+.action-link {
+    @include mixins.actionLink();
+}

@@ -1,0 +1,97 @@
+@use '../common-style/variables.scss';
+@use '../common-style/mixins.scss';
+
+.slider {
+    &__content {
+        overflow: hidden;
+        @include mixins.background();
+
+        @media (max-width: 1024px) {
+            padding: 60px 8px;
+        }
+    }
+
+    &__title {
+        margin-bottom: 12px;
+        text-align: center;
+        @include mixins.caption(variables.$staticWhite);
+    }
+
+    &__subtitle {
+        margin-bottom: 20px;
+        text-align: center;
+        @include mixins.header2(variables.$staticWhite);
+    }
+}
+
+.carousel {
+    &__list {
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        transition: transform 0.5s;
+    }
+}
+
+.slide {
+    display: flex;
+    column-gap: 20px;
+    align-items: center;
+
+    &__text {
+        @include mixins.sliderText(variables.$staticWhite);
+    }
+
+    &__picture {
+        width: 200px;
+        height: 200px;
+        border-radius: 20px;
+    }
+}
+
+.arrows-list {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.arrow {
+    width: 56px;
+    height: 56px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    border: 1px solid variables.$staticWhite;
+    transition: 0.3s;
+    cursor: default;
+
+    &.inactive {
+        .arrow__icon {
+            stroke: variables.$staticWhite40;
+        }
+
+        border-color: variables.$staticWhite40;
+    }
+
+    @media (hover: hover) {
+        &:hover:not(.inactive) {
+            background-color: variables.$staticWhite;
+            cursor: pointer;
+
+            .arrow__icon {
+                stroke: variables.$primary;
+            }
+        }
+    }
+
+    &__icon {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        stroke: variables.$staticWhite;
+        transition: 0.3s;
+    }
+}

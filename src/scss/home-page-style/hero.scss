@@ -1,0 +1,32 @@
+@use '../common-style/variables.scss';
+@use '../common-style/mixins.scss';
+
+.hero {
+    &__content {
+        border-radius: 20px 20px 0 0;
+        @include mixins.background('/img/bg-ball.png');
+
+        @media (max-width: 768px) {
+            @include mixins.background('/img/bg-ball.png', 60px, 8px);
+        }
+    }
+}
+
+.hero-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 429px;
+    padding: 60px 0;
+    text-align: center;
+
+    &__title {
+        @include mixins.caption(variables.$staticWhite);
+    }
+
+    &__description {
+        @include mixins.header1(variables.$staticWhite);
+    }
+}

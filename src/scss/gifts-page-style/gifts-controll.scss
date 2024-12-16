@@ -1,0 +1,68 @@
+@use '../common-style/variables.scss';
+@use '../common-style/mixins.scss';
+
+.gifts {
+    &__content {
+        padding: 60px 82px;
+        border-radius: 20px;
+        background: url(/img/bg-garland.png), variables.$primary;
+        background-repeat: no-repeat;
+        background-size: contain;
+
+        @media (max-width: 1024px) {
+            padding: 60px 68px;
+        }
+
+        @media (max-width: 767px) {
+            padding: 60px 8px;
+        }
+    }
+}
+
+.controll {
+    max-width: 477px;
+    margin: 0 auto;
+    text-align: center;
+
+    &__title {
+        margin-bottom: 20px;
+        @include mixins.header1(variables.$staticWhite);
+    }
+}
+
+.choce-menu-list {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    @media (max-width: 500px) {
+        gap: 0;
+    }
+}
+
+.choce-btn {
+    padding: 12px 20px;
+    transition:
+        color 0.3s,
+        background-color 0.3s;
+    border-radius: 12px;
+    cursor: pointer;
+    @include mixins.actionSmall(variables.$staticWhite);
+
+    @media (hover: hover) {
+        &:hover {
+            background-color: variables.$staticWhite20;
+        }
+    }
+
+    &.active {
+        cursor: default;
+        background-color: variables.$staticWhite20;
+    }
+
+    @media (max-width: 500px) {
+        padding: 12px 8px;
+    }
+}

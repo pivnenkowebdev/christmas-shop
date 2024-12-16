@@ -1,0 +1,122 @@
+@use './variables.scss';
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@mixin header1($colorText) {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: 5.75px;
+    text-transform: uppercase;
+    color: $colorText;
+}
+
+@mixin header2($colorText) {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.52;
+    letter-spacing: 3.8px;
+    text-transform: uppercase;
+    color: $colorText;
+}
+
+@mixin header3($colorText) {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.52;
+    letter-spacing: 1.28px;
+    text-transform: uppercase;
+    color: $colorText;
+}
+
+@mixin header4($colorText) {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: $colorText;
+}
+
+@mixin paragraph($colorText) {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.48;
+    color: $colorText;
+}
+
+@mixin actionLarge($colorText) {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.52;
+    letter-spacing: 3.84px;
+    text-transform: uppercase;
+    color: $colorText;
+}
+
+@mixin actionSmall($colorText) {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    color: $colorText;
+}
+
+@mixin caption($colorText) {
+    font-family: 'Allura', cursive;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 1.2px;
+    color: $colorText;
+}
+
+@mixin sliderText($colorText) {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 80px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    color: $colorText;
+}
+
+@mixin actionLink() {
+    display: inline-block;
+    padding: 20px 32px;
+    border-radius: 20px;
+    background-color: variables.$dark;
+    transition:
+        background-color 0.3s,
+        color 0.3s;
+    text-align: center;
+    letter-spacing: 0.6px;
+    cursor: pointer;
+
+    @include actionSmall(variables.$staticWhite);
+
+    @media (hover: hover) {
+        &:hover {
+            background-color: variables.$staticWhite;
+            color: variables.$dark;
+        }
+    }
+}
+
+@mixin background($secondImg: null, $py: 60px, $px: 82px) {
+    padding: $py $px;
+    @if $secondImg != null {
+        background: url(/img/bg-snow.png), url($secondImg), variables.$primary;
+    } @else {
+        background: url(/img/bg-snow.png), variables.$primary;
+    }
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}

@@ -1,0 +1,69 @@
+@use 'modern-normalize/modern-normalize.css';
+@use './variables.scss';
+@use './header.scss';
+@use './list-cards.scss';
+@use './modal.scss';
+@use './footer.scss';
+
+body {
+    background-color: variables.$staticWhite;
+
+    &.active {
+        overflow: hidden;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+*,
+* > * {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 1em;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    background-color: transparent;
+    outline: none;
+    border: none;
+}
+
+.btn-scroll {
+    position: fixed;
+    bottom: 8px;
+    z-index: 1;
+    right: 8px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 1px solid variables.$primary;
+    background: url(/img/icons/arrow-up.svg) variables.$staticWhite;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}

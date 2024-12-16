@@ -1,0 +1,66 @@
+@use './variables.scss';
+@use './mixins.scss';
+
+.list-gifts {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gift-card {
+    width: 310px;
+    background-color: variables.$contentBackground;
+    overflow: hidden;
+    border-radius: 20px;
+    cursor: pointer;
+
+    &__image {
+        width: 310px;
+        height: 230px;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__preview {
+        min-height: 112px;
+        padding: 20px;
+        border-radius: 20px;
+        background-color: variables.$staticWhite;
+    }
+
+    &__title {
+        margin-bottom: 8px;
+
+        &--tag-purple {
+            @include mixins.header4(variables.$tagPurple);
+        }
+
+        &--tag-green {
+            @include mixins.header4(variables.$tagGreen);
+        }
+
+        &--tag-pink {
+            @include mixins.header4(variables.$tagPink);
+        }
+    }
+
+    &__description {
+        transition: 0.3s;
+        @include mixins.header3(variables.$dark);
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            .gift-card__description {
+                color: variables.$primary;
+            }
+        }
+    }
+}
